@@ -20,14 +20,13 @@
 
 .main {
   display: flex;
-  flex: 1;
   width: 100%;
-  max-width: 800px;
+
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   background-color: var(--foreground);
-  padding: 120px 60px;
+  padding: 0 150px;
 }
 
 .intro {
@@ -61,27 +60,85 @@
   color: var(--text-primary);
 }
 
-.ctas {
-  display: flex;
-  flex-direction: row;
+.banner {
   width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+  height: 200px;
+  background-color: var(--button-secondary-hover);
+  border-radius: 8px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
 }
 
-.ctas a {
+.seiyuuPage {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
   justify-content: center;
+
+  gap: 24px;
+  width: 100%;
+  z-index: 30;
+
+  margin-top: 100px;
+  border-radius: 8px;
+  border: 3px solid #ffffff;
+}
+
+.seiyuuInfo {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  text-align: left;
+  justify-content: center;
+  gap: 24px;
+}
+
+.seiyuuDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: center;
+  gap: 18px;
+}
+
+.roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.roleCard {
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  
+  padding: 8px;
+  gap: 4px;
+  width: 30%;
+
+  border: 1px solid #ccc;
+  border-radius: 16px;
+}
+
+.roleCard img {
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.charName { font-weight: 600; }
+.charRole { font-size: 12px; opacity: 0.7; }
+
+.animeInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 12px;
 }
 
 a.primary {
