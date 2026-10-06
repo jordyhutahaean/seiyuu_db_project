@@ -104,6 +104,15 @@
   gap: 18px;
 }
 
+.box1{
+  width: 20%
+}
+.roleList{
+  gap: 14px;
+  display: flex;
+  flex-direction: row;
+}
+
 .roles {
   display: flex;
   flex-wrap: wrap;
@@ -118,10 +127,11 @@
   
   padding: 8px;
   gap: 4px;
-  width: 30%;
+  width: stretch;
 
   border: 1px solid #ccc;
   border-radius: 16px;
+  justify-content: space-between;
 }
 
 .roleCard img {
@@ -139,6 +149,19 @@
   gap: 8px;
   margin-top: 4px;
   font-size: 12px;
+}
+
+.animeChar{
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.verticalName{
+  align-items: flex-start;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 a.primary {

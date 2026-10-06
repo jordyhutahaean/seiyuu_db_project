@@ -53,37 +53,42 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section>
-          <h2>Popular Roles</h2>
+        <section className={styles.roleList}>
+          <div className={styles.box1}>
+            <h1>HHH</h1>
+          </div>
           <div className={styles.roles}>
+          <h2>Popular Roles</h2>
             {seiyuu.characters?.edges?.map((edge: any) => {
               const character = edge.node;
               const anime = edge.media?.[0];
 
               const animeTitle = anime?.title.english ?? anime?.title.romaji;
-              // const animeImg = anime?.coverImage?.large || anime?.coverImage?.medium;
+              const animeImg = anime?.coverImage?.large || anime?.coverImage?.medium;
               const charName = character.name.full || character.name.native;
               const charImg = character.image?.large;
 
               return (
                 <div key={character.id} className={styles.roleCard}>
+                  <div className={styles.animeChar}>
                   {charImg && (
-                    <Image src={charImg} alt={charName} width={100} height={150} />
+                    <Image src={charImg} alt={charName} 
+                    width={100/2} height={150/2} />
                   )}
-                  <div>
-                  <p className={styles.charName}>{charName}</p>
-                  <p className={styles.charRole}>{edge.role}</p>
-                  {anime && (
-                    <div className={styles.animeInfo}>
-                      {/* {animeImg && (
-                        <Image src={animeImg} alt={animeTitle} width={40} height={60} />
-                      )} */}
-                      <p>{animeTitle}</p>
+                    <div className={styles.verticalName}>
+                      <p className={styles.charName}>{charName}</p>
+                      <p className={styles.charRole}>{edge.role}</p>
                     </div>
-                  )}
-
                   </div>
 
+                  {anime && (
+                    <div className={styles.animeInfo}>
+                      <p>{animeTitle}</p>
+                      {animeImg && (
+                        <Image src={animeImg} alt={animeTitle} width={100/2} height={150/2} />
+                      )}
+                    </div>
+                   )}                   
                 </div>
               );
             })}
